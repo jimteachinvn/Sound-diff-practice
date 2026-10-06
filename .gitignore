@@ -1,0 +1,12 @@
+node_modules
+.next
+.next-dev
+.env.*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+.pnpm-store/
+/sound-families-pilot-149/
+/*.jpg
+/data/research/global-success-candidates.json
+/data/audio/pending/

@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "scope": "three common OU sound families in British reference English",
+  "referenceSha256": "221394caef0cf723b4f2df81a98ac33191293257b88aed5b1fb89466d3a0dc77",
+  "cambridgeReview": {
+    "souvenir": "https://dictionary.cambridge.org/pronunciation/english/souvenir",
+    "cousin": "https://dictionary.cambridge.org/dictionary/english/cousin"
+  },
+  "entries": [
+    {
+      "id": "ou:account",
+      "familyId": "ou",
+      "word": "account",
+      "ipa": "/əˈkaʊnt/",
+      "outcomeId": "au",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        12
+      ]
+    },
+    {
+      "id": "ou:accounts",
+      "familyId": "ou",
+      "word": "accounts",
+      "ipa": "/əˈkaʊnts/",
+      "outcomeId": "au",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        12
+      ]
+    },
+    {
+      "id": "ou:announcement",
+      "familyId": "ou",
+      "word": "announcement",
+      "ipa": "/əˈnaʊnsmənt/",
+      "outcomeId": "au",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ou:announcements",
+      "familyId": "ou",
+      "word": "announcements",
+      "ipa": "/əˈnaʊnsmənts/",
+      "outcomeId": "au",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ou:around",
+      "familyId": "ou",
+      "word": "around",
+      "ipa": "/əˈraʊnd/",
+      "outcomeId": "au",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "ou:dollhouse",
+      "familyId": "ou",
+      "word": "dollhouse",
+      "ipa": "/ˈdɒlhaʊs/",
+      "outcomeId": "au",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ou:flour",
+      "familyId": "ou",
+      "word": "flour",
+      "ipa": "/flaʊə/",
+      "outcomeId": "au",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ou:found",
+      "familyId": "ou",
+      "word": "found",
+      "ipa": "/faʊnd/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        12
+      ]
+    },
+    {
+      "id": "ou:household",
+      "familyId": "ou",
+      "word": "household",
+      "ipa": "/ˈhaʊshəʊld/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ou:housework",
+      "familyId": "ou",
+      "word": "housework",
+      "ipa": "/ˈhaʊswɜːk/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "ou:housing",
+      "familyId": "ou",
+      "word": "housing",
+      "ipa": "/ˈhaʊzɪŋ/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ou:lighthouse",
+      "familyId": "ou",
+      "word": "lighthouse",
+      "ipa": "/ˈlaɪthaʊs/",
+      "outcomeId": "au",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ou:loudspeaker",
+      "familyId": "ou",
+      "word": "loudspeaker",
+      "ipa": "/ˌlaʊdˈspiːkə/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ou:mount",
+      "familyId": "ou",
+      "word": "mount",
+      "ipa": "/maʊnt/",
+      "outcomeId": "au",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ou:outdoor",
+      "familyId": "ou",
+      "word": "outdoor",
+      "ipa": "/ˈaʊtdɔː/",
+      "outcomeId": "au",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "ou:playground",
+      "familyId": "ou",
+      "word": "playground",
+      "ipa": "/ˈpleɪgraʊnd/",
+      "outcomeId": "au",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ou:proud",
+      "familyId": "ou",
+      "word": "proud",
+      "ipa": "/praʊd/",
+      "outcomeId": "au",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ou:soup",
+      "familyId": "ou",
+      "word": "soup",
+      "ipa": "/suːp/",
+      "outcomeId": "u-long",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ou:soups",
+      "familyId": "ou",
+      "word": "soups",
+      "ipa": "/suːps/",
+      "outcomeId": "u-long",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ou:souvenir",
+      "familyId": "ou",
+      "word": "souvenir",
+      "ipa": "/ˌsuːvəˈnɪə/",
+      "outcomeId": "u-long",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ou:youth",
+      "familyId": "ou",
+      "word": "youth",
+      "ipa": "/juːθ/",
+      "outcomeId": "u-long",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "ou:colour",
+      "familyId": "ou",
+      "word": "colour",
+      "ipa": "/ˈkʌlə/",
+      "outcomeId": "uh",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "ou:colours",
+      "familyId": "ou",
+      "word": "colours",
+      "ipa": "/ˈkʌləz/",
+      "outcomeId": "uh",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "ou:country",
+      "familyId": "ou",
+      "word": "country",
+      "ipa": "/ˈkʌntri/",
+      "outcomeId": "uh",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "ou:cousin",
+      "familyId": "ou",
+      "word": "cousin",
+      "ipa": "/ˈkʌzən/",
+      "outcomeId": "uh",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "ou:touch",
+      "familyId": "ou",
+      "word": "touch",
+      "ipa": "/tʌtʃ/",
+      "outcomeId": "uh",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ou:touching",
+      "familyId": "ou",
+      "word": "touching",
+      "ipa": "/ˈtʌtʃɪŋ/",
+      "outcomeId": "uh",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ou:touchscreen",
+      "familyId": "ou",
+      "word": "touchscreen",
+      "ipa": "/ˈtʌtʃskriːn/",
+      "outcomeId": "uh",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    }
+  ]
+}

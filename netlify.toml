@@ -1,0 +1,7 @@
+[build]
+command = "pnpm test && pnpm typecheck && pnpm audio:check && pnpm content:check && pnpm build"
+publish = ".next"
+
+[build.environment]
+NODE_VERSION = "22"
+PNPM_FLAGS = "--shamefully-hoist"

@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "scope": "curated three-sound ch contrast",
+  "referenceSha256": "221394caef0cf723b4f2df81a98ac33191293257b88aed5b1fb89466d3a0dc77",
+  "cambridgeReview": {
+    "character": "https://dictionary.cambridge.org/pronunciation/english/character",
+    "characteristic": "https://dictionary.cambridge.org/pronunciation/english/characteristic",
+    "chemical": "https://dictionary.cambridge.org/pronunciation/english/chemical",
+    "mechanic": "https://dictionary.cambridge.org/pronunciation/english/mechanic",
+    "technical": "https://dictionary.cambridge.org/pronunciation/english/technical"
+  },
+  "entries": [
+    {
+      "id": "ch:achieve",
+      "familyId": "ch",
+      "word": "achieve",
+      "ipa": "/əˈtʃiːv/",
+      "outcomeId": "tch",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ch:achievement",
+      "familyId": "ch",
+      "word": "achievement",
+      "ipa": "/əˈtʃiːvmənt/",
+      "outcomeId": "tch",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:beach",
+      "familyId": "ch",
+      "word": "beach",
+      "ipa": "/biːtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4
+      ]
+    },
+    {
+      "id": "ch:catch",
+      "familyId": "ch",
+      "word": "catch",
+      "ipa": "/kætʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:challenging",
+      "familyId": "ch",
+      "word": "challenging",
+      "ipa": "/ˈtʃælɪndʒɪŋ/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:chapped",
+      "familyId": "ch",
+      "word": "chapped",
+      "ipa": "/tʃæpt/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ch:chat",
+      "familyId": "ch",
+      "word": "chat",
+      "ipa": "/tʃæt/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ch:cheating",
+      "familyId": "ch",
+      "word": "cheating",
+      "ipa": "/ˈtʃiːtɪŋ/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:cheek",
+      "familyId": "ch",
+      "word": "cheek",
+      "ipa": "/tʃiːk/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ch:chess",
+      "familyId": "ch",
+      "word": "chess",
+      "ipa": "/tʃes/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ch:childhood",
+      "familyId": "ch",
+      "word": "childhood",
+      "ipa": "/ˈtʃaɪldhʊd/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:childminder",
+      "familyId": "ch",
+      "word": "childminder",
+      "ipa": "/ˈtʃaɪldmaɪndə/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:chips",
+      "familyId": "ch",
+      "word": "chips",
+      "ipa": "/tʃɪps/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4
+      ]
+    },
+    {
+      "id": "ch:choice",
+      "familyId": "ch",
+      "word": "choice",
+      "ipa": "/tʃɔɪs/",
+      "outcomeId": "tch",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ch:dutch",
+      "familyId": "ch",
+      "word": "dutch",
+      "ipa": "/dʌtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ch:itchy",
+      "familyId": "ch",
+      "word": "itchy",
+      "ipa": "/ˈɪtʃi/",
+      "outcomeId": "tch",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ch:march",
+      "familyId": "ch",
+      "word": "march",
+      "ipa": "/mɑːtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4
+      ]
+    },
+    {
+      "id": "ch:orchard",
+      "familyId": "ch",
+      "word": "orchard",
+      "ipa": "/ˈɔːtʃəd/",
+      "outcomeId": "tch",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:poach",
+      "familyId": "ch",
+      "word": "poach",
+      "ipa": "/pəʊtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:stretch",
+      "familyId": "ch",
+      "word": "stretch",
+      "ipa": "/stretʃ/",
+      "outcomeId": "tch",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:teacher",
+      "familyId": "ch",
+      "word": "teacher",
+      "ipa": "/ˈtiːtʃə/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ch:touch",
+      "familyId": "ch",
+      "word": "touch",
+      "ipa": "/tʌtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3
+      ]
+    },
+    {
+      "id": "ch:touching",
+      "familyId": "ch",
+      "word": "touching",
+      "ipa": "/ˈtʌtʃɪŋ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ch:touchscreen",
+      "familyId": "ch",
+      "word": "touchscreen",
+      "ipa": "/ˈtʌtʃskriːn/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ch:watch",
+      "familyId": "ch",
+      "word": "watch",
+      "ipa": "/wɒtʃ/",
+      "outcomeId": "tch",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "ch:character",
+      "familyId": "ch",
+      "word": "character",
+      "ipa": "/ˈkærəktə/",
+      "outcomeId": "k",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        7,
+        10,
+        12
+      ]
+    },
+    {
+      "id": "ch:characteristic",
+      "familyId": "ch",
+      "word": "characteristic",
+      "ipa": "/ˌkærəktəˈrɪstɪk/",
+      "outcomeId": "k",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ch:chemical",
+      "familyId": "ch",
+      "word": "chemical",
+      "ipa": "/ˈkemɪkl/",
+      "outcomeId": "k",
+      "start": 0,
+      "end": 2,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ch:mechanic",
+      "familyId": "ch",
+      "word": "mechanic",
+      "ipa": "/məˈkænɪk/",
+      "outcomeId": "k",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        11
+      ]
+    },
+    {
+      "id": "ch:psychology",
+      "familyId": "ch",
+      "word": "psychology",
+      "ipa": "/saɪˈkɒlədʒi/",
+      "outcomeId": "k",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ch:schoolwork",
+      "familyId": "ch",
+      "word": "schoolwork",
+      "ipa": "/ˈskuːlwɜːk/",
+      "outcomeId": "k",
+      "start": 1,
+      "end": 3,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:technical",
+      "familyId": "ch",
+      "word": "technical",
+      "ipa": "/ˈteknɪkl/",
+      "outcomeId": "k",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ch:technology",
+      "familyId": "ch",
+      "word": "technology",
+      "ipa": "/tekˈnɒlədʒi/",
+      "outcomeId": "k",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ch:brochure",
+      "familyId": "ch",
+      "word": "brochure",
+      "ipa": "/ˈbrəʊʃə/",
+      "outcomeId": "sh",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ch:brochures",
+      "familyId": "ch",
+      "word": "brochures",
+      "ipa": "/ˈbrəʊʃəz/",
+      "outcomeId": "sh",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ch:parachute",
+      "familyId": "ch",
+      "word": "parachute",
+      "ipa": "/ˈpærəʃuːt/",
+      "outcomeId": "sh",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ch:parachutes",
+      "familyId": "ch",
+      "word": "parachutes",
+      "ipa": "/ˈpærəʃuːts/",
+      "outcomeId": "sh",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    }
+  ]
+}

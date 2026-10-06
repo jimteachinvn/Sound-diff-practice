@@ -1,0 +1,2393 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "scope": "curated regular endings from textbook-linked source lemmas",
+  "referenceSha256": "221394caef0cf723b4f2df81a98ac33191293257b88aed5b1fb89466d3a0dc77",
+  "entries": [
+    {
+      "id": "s-ending:achievements",
+      "familyId": "s-ending",
+      "word": "achievements",
+      "ipa": "/əˈtʃiːvmənts/",
+      "outcomeId": "s",
+      "start": 11,
+      "end": 12,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "s-ending:announcements",
+      "familyId": "s-ending",
+      "word": "announcements",
+      "ipa": "/əˈnaʊnsmənts/",
+      "outcomeId": "s",
+      "start": 12,
+      "end": 13,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:assignments",
+      "familyId": "s-ending",
+      "word": "assignments",
+      "ipa": "/əˈsaɪnmənts/",
+      "outcomeId": "s",
+      "start": 10,
+      "end": 11,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:backpacks",
+      "familyId": "s-ending",
+      "word": "backpacks",
+      "ipa": "/ˈbækpæks/",
+      "outcomeId": "s",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:boats",
+      "familyId": "s-ending",
+      "word": "boats",
+      "ipa": "/bəʊts/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:cheeks",
+      "familyId": "s-ending",
+      "word": "cheeks",
+      "ipa": "/tʃiːks/",
+      "outcomeId": "s",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:clips",
+      "familyId": "s-ending",
+      "word": "clips",
+      "ipa": "/klɪps/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:comments",
+      "familyId": "s-ending",
+      "word": "comments",
+      "ipa": "/ˈkɒments/",
+      "outcomeId": "s",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:connects",
+      "familyId": "s-ending",
+      "word": "connects",
+      "ipa": "/kəˈnekts/",
+      "outcomeId": "s",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:contestants",
+      "familyId": "s-ending",
+      "word": "contestants",
+      "ipa": "/kənˈtestənts/",
+      "outcomeId": "s",
+      "start": 10,
+      "end": 11,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:crops",
+      "familyId": "s-ending",
+      "word": "crops",
+      "ipa": "/krɒps/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:fabrics",
+      "familyId": "s-ending",
+      "word": "fabrics",
+      "ipa": "/ˈfæbrɪks/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:feasts",
+      "familyId": "s-ending",
+      "word": "feasts",
+      "ipa": "/fiːsts/",
+      "outcomeId": "s",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:flats",
+      "familyId": "s-ending",
+      "word": "flats",
+      "ipa": "/flæts/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "s-ending:footsteps",
+      "familyId": "s-ending",
+      "word": "footsteps",
+      "ipa": "/ˈfʊtsteps/",
+      "outcomeId": "s",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "s-ending:helmets",
+      "familyId": "s-ending",
+      "word": "helmets",
+      "ipa": "/ˈhelmɪts/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:insects",
+      "familyId": "s-ending",
+      "word": "insects",
+      "ipa": "/ˈɪnsekts/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:laptops",
+      "familyId": "s-ending",
+      "word": "laptops",
+      "ipa": "/ˈlæptɒps/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:leaflets",
+      "familyId": "s-ending",
+      "word": "leaflets",
+      "ipa": "/ˈliːfləts/",
+      "outcomeId": "s",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        11
+      ]
+    },
+    {
+      "id": "s-ending:maps",
+      "familyId": "s-ending",
+      "word": "maps",
+      "ipa": "/mæps/",
+      "outcomeId": "s",
+      "start": 3,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:marks",
+      "familyId": "s-ending",
+      "word": "marks",
+      "ipa": "/mɑːks/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:peaks",
+      "familyId": "s-ending",
+      "word": "peaks",
+      "ipa": "/piːks/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:planets",
+      "familyId": "s-ending",
+      "word": "planets",
+      "ipa": "/ˈplænɪts/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:products",
+      "familyId": "s-ending",
+      "word": "products",
+      "ipa": "/ˈprɒdʌkts/",
+      "outcomeId": "s",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:robots",
+      "familyId": "s-ending",
+      "word": "robots",
+      "ipa": "/ˈrəʊbɒts/",
+      "outcomeId": "s",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:rockets",
+      "familyId": "s-ending",
+      "word": "rockets",
+      "ipa": "/ˈrɒkɪts/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:sinks",
+      "familyId": "s-ending",
+      "word": "sinks",
+      "ipa": "/sɪŋks/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:sunsets",
+      "familyId": "s-ending",
+      "word": "sunsets",
+      "ipa": "/ˈsʌnsets/",
+      "outcomeId": "s",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:texts",
+      "familyId": "s-ending",
+      "word": "texts",
+      "ipa": "/teksts/",
+      "outcomeId": "s",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:workshops",
+      "familyId": "s-ending",
+      "word": "workshops",
+      "ipa": "/ˈwɜːkʃɒps/",
+      "outcomeId": "s",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:aims",
+      "familyId": "s-ending",
+      "word": "aims",
+      "ipa": "/eɪmz/",
+      "outcomeId": "z",
+      "start": 3,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:aliens",
+      "familyId": "s-ending",
+      "word": "aliens",
+      "ipa": "/ˈeɪliənz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:anthems",
+      "familyId": "s-ending",
+      "word": "anthems",
+      "ipa": "/ˈænθəmz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:aquariums",
+      "familyId": "s-ending",
+      "word": "aquariums",
+      "ipa": "/əˈkweəriəmz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:boards",
+      "familyId": "s-ending",
+      "word": "boards",
+      "ipa": "/bɔːdz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:bugs",
+      "familyId": "s-ending",
+      "word": "bugs",
+      "ipa": "/bʌgz/",
+      "outcomeId": "z",
+      "start": 3,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:buildings",
+      "familyId": "s-ending",
+      "word": "buildings",
+      "ipa": "/ˈbɪldɪŋz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "s-ending:campaigns",
+      "familyId": "s-ending",
+      "word": "campaigns",
+      "ipa": "/kæmˈpeɪnz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:cartoons",
+      "familyId": "s-ending",
+      "word": "cartoons",
+      "ipa": "/kɑːˈtuːnz/",
+      "outcomeId": "z",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "s-ending:cathedrals",
+      "familyId": "s-ending",
+      "word": "cathedrals",
+      "ipa": "/kəˈθiːdrəlz/",
+      "outcomeId": "z",
+      "start": 9,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:computers",
+      "familyId": "s-ending",
+      "word": "computers",
+      "ipa": "/kəmˈpjuːtəz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:customers",
+      "familyId": "s-ending",
+      "word": "customers",
+      "ipa": "/ˈkʌstəməz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:dolphins",
+      "familyId": "s-ending",
+      "word": "dolphins",
+      "ipa": "/ˈdɒlfɪnz/",
+      "outcomeId": "z",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "s-ending:eels",
+      "familyId": "s-ending",
+      "word": "eels",
+      "ipa": "/iːlz/",
+      "outcomeId": "z",
+      "start": 3,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:floors",
+      "familyId": "s-ending",
+      "word": "floors",
+      "ipa": "/flɔːz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:forums",
+      "familyId": "s-ending",
+      "word": "forums",
+      "ipa": "/ˈfɔːrəmz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:freedoms",
+      "familyId": "s-ending",
+      "word": "freedoms",
+      "ipa": "/ˈfriːdəmz/",
+      "outcomeId": "z",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:gyms",
+      "familyId": "s-ending",
+      "word": "gyms",
+      "ipa": "/dʒɪmz/",
+      "outcomeId": "z",
+      "start": 3,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "s-ending:hills",
+      "familyId": "s-ending",
+      "word": "hills",
+      "ipa": "/hɪlz/",
+      "outcomeId": "z",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:islands",
+      "familyId": "s-ending",
+      "word": "islands",
+      "ipa": "/ˈaɪləndz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:learners",
+      "familyId": "s-ending",
+      "word": "learners",
+      "ipa": "/ˈlɜːnəz/",
+      "outcomeId": "z",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:marathons",
+      "familyId": "s-ending",
+      "word": "marathons",
+      "ipa": "/ˈmærəθənz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:organisms",
+      "familyId": "s-ending",
+      "word": "organisms",
+      "ipa": "/ˈɔːgənɪzəmz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:pandas",
+      "familyId": "s-ending",
+      "word": "pandas",
+      "ipa": "/ˈpændəz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5,
+        10
+      ]
+    },
+    {
+      "id": "s-ending:penguins",
+      "familyId": "s-ending",
+      "word": "penguins",
+      "ipa": "/ˈpeŋgwɪnz/",
+      "outcomeId": "z",
+      "start": 7,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:poems",
+      "familyId": "s-ending",
+      "word": "poems",
+      "ipa": "/ˈpəʊɪmz/",
+      "outcomeId": "z",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "s-ending:queens",
+      "familyId": "s-ending",
+      "word": "queens",
+      "ipa": "/kwiːnz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "s-ending:regions",
+      "familyId": "s-ending",
+      "word": "regions",
+      "ipa": "/ˈriːdʒənz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:screens",
+      "familyId": "s-ending",
+      "word": "screens",
+      "ipa": "/skriːnz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:signals",
+      "familyId": "s-ending",
+      "word": "signals",
+      "ipa": "/ˈsɪgnəlz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:stars",
+      "familyId": "s-ending",
+      "word": "stars",
+      "ipa": "/stɑːz/",
+      "outcomeId": "z",
+      "start": 4,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:storms",
+      "familyId": "s-ending",
+      "word": "storms",
+      "ipa": "/stɔːmz/",
+      "outcomeId": "z",
+      "start": 5,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:standards",
+      "familyId": "s-ending",
+      "word": "standards",
+      "ipa": "/ˈstændədz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:suburbs",
+      "familyId": "s-ending",
+      "word": "suburbs",
+      "ipa": "/ˈsʌbɜːbz/",
+      "outcomeId": "z",
+      "start": 6,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        9
+      ]
+    },
+    {
+      "id": "s-ending:teenagers",
+      "familyId": "s-ending",
+      "word": "teenagers",
+      "ipa": "/ˈtiːneɪdʒəz/",
+      "outcomeId": "z",
+      "start": 8,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:accesses",
+      "familyId": "s-ending",
+      "word": "accesses",
+      "ipa": "/ˈæksesɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "s-ending:ages",
+      "familyId": "s-ending",
+      "word": "ages",
+      "ipa": "/eɪdʒɪz/",
+      "outcomeId": "iz",
+      "start": 2,
+      "end": 4,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:appliances",
+      "familyId": "s-ending",
+      "word": "appliances",
+      "ipa": "/əˈplaɪənsɪz/",
+      "outcomeId": "iz",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        10
+      ]
+    },
+    {
+      "id": "s-ending:bonuses",
+      "familyId": "s-ending",
+      "word": "bonuses",
+      "ipa": "/ˈbəʊnəsɪz/",
+      "outcomeId": "iz",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "s-ending:campuses",
+      "familyId": "s-ending",
+      "word": "campuses",
+      "ipa": "/ˈkæmpəsɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:choices",
+      "familyId": "s-ending",
+      "word": "choices",
+      "ipa": "/tʃɔɪsɪz/",
+      "outcomeId": "iz",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:crosses",
+      "familyId": "s-ending",
+      "word": "crosses",
+      "ipa": "/krɒsɪz/",
+      "outcomeId": "iz",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:dances",
+      "familyId": "s-ending",
+      "word": "dances",
+      "ipa": "/dɑːnsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "s-ending:devices",
+      "familyId": "s-ending",
+      "word": "devices",
+      "ipa": "/dɪˈvaɪsɪz/",
+      "outcomeId": "iz",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "s-ending:distances",
+      "familyId": "s-ending",
+      "word": "distances",
+      "ipa": "/ˈdɪstənsɪz/",
+      "outcomeId": "iz",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:fragrances",
+      "familyId": "s-ending",
+      "word": "fragrances",
+      "ipa": "/ˈfreɪgrənsɪz/",
+      "outcomeId": "iz",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:illnesses",
+      "familyId": "s-ending",
+      "word": "illnesses",
+      "ipa": "/ˈɪlnəsɪz/",
+      "outcomeId": "iz",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "s-ending:juices",
+      "familyId": "s-ending",
+      "word": "juices",
+      "ipa": "/dʒuːsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:marriages",
+      "familyId": "s-ending",
+      "word": "marriages",
+      "ipa": "/ˈmærɪdʒɪz/",
+      "outcomeId": "iz",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "s-ending:prices",
+      "familyId": "s-ending",
+      "word": "prices",
+      "ipa": "/praɪsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:promises",
+      "familyId": "s-ending",
+      "word": "promises",
+      "ipa": "/ˈprɒmɪsɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "s-ending:sauces",
+      "familyId": "s-ending",
+      "word": "sauces",
+      "ipa": "/sɔːsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:sciences",
+      "familyId": "s-ending",
+      "word": "sciences",
+      "ipa": "/ˈsaɪənsɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4,
+        8
+      ]
+    },
+    {
+      "id": "s-ending:services",
+      "familyId": "s-ending",
+      "word": "services",
+      "ipa": "/ˈsɜːvɪsɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "s-ending:spaces",
+      "familyId": "s-ending",
+      "word": "spaces",
+      "ipa": "/speɪsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "s-ending:stresses",
+      "familyId": "s-ending",
+      "word": "stresses",
+      "ipa": "/stresɪz/",
+      "outcomeId": "iz",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "s-ending:stretches",
+      "familyId": "s-ending",
+      "word": "stretches",
+      "ipa": "/stretʃɪz/",
+      "outcomeId": "iz",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:substances",
+      "familyId": "s-ending",
+      "word": "substances",
+      "ipa": "/ˈsʌbstənsɪz/",
+      "outcomeId": "iz",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:traces",
+      "familyId": "s-ending",
+      "word": "traces",
+      "ipa": "/treɪsɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "s-ending:wishes",
+      "familyId": "s-ending",
+      "word": "wishes",
+      "ipa": "/wɪʃɪz/",
+      "outcomeId": "iz",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:danced",
+      "familyId": "ed-ending",
+      "word": "danced",
+      "ipa": "/dɑːnst/",
+      "outcomeId": "t",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "ed-ending:developed",
+      "familyId": "ed-ending",
+      "word": "developed",
+      "ipa": "/dɪˈveləpt/",
+      "outcomeId": "t",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:disliked",
+      "familyId": "ed-ending",
+      "word": "disliked",
+      "ipa": "/dɪsˈlaɪkt/",
+      "outcomeId": "t",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:established",
+      "familyId": "ed-ending",
+      "word": "established",
+      "ipa": "/ɪˈstæblɪʃt/",
+      "outcomeId": "t",
+      "start": 9,
+      "end": 11,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:possessed",
+      "familyId": "ed-ending",
+      "word": "possessed",
+      "ipa": "/pəˈzest/",
+      "outcomeId": "t",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:reduced",
+      "familyId": "ed-ending",
+      "word": "reduced",
+      "ipa": "/rɪˈdjuːst/",
+      "outcomeId": "t",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:replaced",
+      "familyId": "ed-ending",
+      "word": "replaced",
+      "ipa": "/rɪˈpleɪst/",
+      "outcomeId": "t",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7,
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:stretched",
+      "familyId": "ed-ending",
+      "word": "stretched",
+      "ipa": "/stretʃt/",
+      "outcomeId": "t",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:sucked",
+      "familyId": "ed-ending",
+      "word": "sucked",
+      "ipa": "/sʌkt/",
+      "outcomeId": "t",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:worshipped",
+      "familyId": "ed-ending",
+      "word": "worshipped",
+      "ipa": "/ˈwɜːʃɪpt/",
+      "outcomeId": "t",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:acquired",
+      "familyId": "ed-ending",
+      "word": "acquired",
+      "ipa": "/əˈkwaɪəd/",
+      "outcomeId": "d",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:admired",
+      "familyId": "ed-ending",
+      "word": "admired",
+      "ipa": "/ədˈmaɪəd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:analysed",
+      "familyId": "ed-ending",
+      "word": "analysed",
+      "ipa": "/ˈænəlaɪzd/",
+      "outcomeId": "d",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:arrived",
+      "familyId": "ed-ending",
+      "word": "arrived",
+      "ipa": "/əˈraɪvd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    },
+    {
+      "id": "ed-ending:behaved",
+      "familyId": "ed-ending",
+      "word": "behaved",
+      "ipa": "/bɪˈheɪvd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:browsed",
+      "familyId": "ed-ending",
+      "word": "browsed",
+      "ipa": "/braʊzd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:qualified",
+      "familyId": "ed-ending",
+      "word": "qualified",
+      "ipa": "/ˈkwɒlɪfaɪd/",
+      "outcomeId": "d",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:carved",
+      "familyId": "ed-ending",
+      "word": "carved",
+      "ipa": "/kɑːvd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:complained",
+      "familyId": "ed-ending",
+      "word": "complained",
+      "ipa": "/kəmˈpleɪnd/",
+      "outcomeId": "d",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:controlled",
+      "familyId": "ed-ending",
+      "word": "controlled",
+      "ipa": "/kənˈtrəʊld/",
+      "outcomeId": "d",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7,
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:watered",
+      "familyId": "ed-ending",
+      "word": "watered",
+      "ipa": "/ˈwɔːtəd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:damaged",
+      "familyId": "ed-ending",
+      "word": "damaged",
+      "ipa": "/ˈdæmɪdʒd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:delayed",
+      "familyId": "ed-ending",
+      "word": "delayed",
+      "ipa": "/dɪˈleɪd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:delivered",
+      "familyId": "ed-ending",
+      "word": "delivered",
+      "ipa": "/dɪˈlɪvəd/",
+      "outcomeId": "d",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:destroyed",
+      "familyId": "ed-ending",
+      "word": "destroyed",
+      "ipa": "/dɪˈstrɔɪd/",
+      "outcomeId": "d",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:discovered",
+      "familyId": "ed-ending",
+      "word": "discovered",
+      "ipa": "/dɪˈskʌvəd/",
+      "outcomeId": "d",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:dried",
+      "familyId": "ed-ending",
+      "word": "dried",
+      "ipa": "/draɪd/",
+      "outcomeId": "d",
+      "start": 3,
+      "end": 5,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:entered",
+      "familyId": "ed-ending",
+      "word": "entered",
+      "ipa": "/ˈentəd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:revived",
+      "familyId": "ed-ending",
+      "word": "revived",
+      "ipa": "/rɪˈvaɪvd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:honoured",
+      "familyId": "ed-ending",
+      "word": "honoured",
+      "ipa": "/ˈɒnəd/",
+      "outcomeId": "d",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:interviewed",
+      "familyId": "ed-ending",
+      "word": "interviewed",
+      "ipa": "/ˈɪntəvjuːd/",
+      "outcomeId": "d",
+      "start": 9,
+      "end": 11,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:managed",
+      "familyId": "ed-ending",
+      "word": "managed",
+      "ipa": "/ˈmænɪdʒd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:measured",
+      "familyId": "ed-ending",
+      "word": "measured",
+      "ipa": "/ˈmeʒəd/",
+      "outcomeId": "d",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:monitored",
+      "familyId": "ed-ending",
+      "word": "monitored",
+      "ipa": "/ˈmɒnɪtəd/",
+      "outcomeId": "d",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:occurred",
+      "familyId": "ed-ending",
+      "word": "occurred",
+      "ipa": "/əˈkɜːd/",
+      "outcomeId": "d",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:performed",
+      "familyId": "ed-ending",
+      "word": "performed",
+      "ipa": "/pəˈfɔːmd/",
+      "outcomeId": "d",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:prayed",
+      "familyId": "ed-ending",
+      "word": "prayed",
+      "ipa": "/preɪd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:remembered",
+      "familyId": "ed-ending",
+      "word": "remembered",
+      "ipa": "/rɪˈmembəd/",
+      "outcomeId": "d",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:removed",
+      "familyId": "ed-ending",
+      "word": "removed",
+      "ipa": "/rɪˈmuːvd/",
+      "outcomeId": "d",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:sailed",
+      "familyId": "ed-ending",
+      "word": "sailed",
+      "ipa": "/seɪld/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:served",
+      "familyId": "ed-ending",
+      "word": "served",
+      "ipa": "/sɜːvd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:shared",
+      "familyId": "ed-ending",
+      "word": "shared",
+      "ipa": "/ʃeəd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:showed",
+      "familyId": "ed-ending",
+      "word": "showed",
+      "ipa": "/ʃəʊd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:warmed",
+      "familyId": "ed-ending",
+      "word": "warmed",
+      "ipa": "/wɔːmd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:zoomed",
+      "familyId": "ed-ending",
+      "word": "zoomed",
+      "ipa": "/zuːmd/",
+      "outcomeId": "d",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:activated",
+      "familyId": "ed-ending",
+      "word": "activated",
+      "ipa": "/ˈæktɪveɪtɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:admitted",
+      "familyId": "ed-ending",
+      "word": "admitted",
+      "ipa": "/ədˈmɪtɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:adopted",
+      "familyId": "ed-ending",
+      "word": "adopted",
+      "ipa": "/əˈdɒptɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10,
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:attended",
+      "familyId": "ed-ending",
+      "word": "attended",
+      "ipa": "/əˈtendɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:automated",
+      "familyId": "ed-ending",
+      "word": "automated",
+      "ipa": "/ˈɔːtəmeɪtɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:captivated",
+      "familyId": "ed-ending",
+      "word": "captivated",
+      "ipa": "/ˈkæptɪveɪtɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:committed",
+      "familyId": "ed-ending",
+      "word": "committed",
+      "ipa": "/kəˈmɪtɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:communicated",
+      "familyId": "ed-ending",
+      "word": "communicated",
+      "ipa": "/kəˈmjuːnɪkeɪtɪd/",
+      "outcomeId": "id",
+      "start": 10,
+      "end": 12,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:competed",
+      "familyId": "ed-ending",
+      "word": "competed",
+      "ipa": "/kəmˈpiːtɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:cultivated",
+      "familyId": "ed-ending",
+      "word": "cultivated",
+      "ipa": "/ˈkʌltɪveɪtɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:decorated",
+      "familyId": "ed-ending",
+      "word": "decorated",
+      "ipa": "/ˈdekəreɪtɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:defeated",
+      "familyId": "ed-ending",
+      "word": "defeated",
+      "ipa": "/dɪˈfiːtɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:degraded",
+      "familyId": "ed-ending",
+      "word": "degraded",
+      "ipa": "/dɪˈgreɪdɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:detested",
+      "familyId": "ed-ending",
+      "word": "detested",
+      "ipa": "/dɪˈtestɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:distributed",
+      "familyId": "ed-ending",
+      "word": "distributed",
+      "ipa": "/dɪˈstrɪbjuːtɪd/",
+      "outcomeId": "id",
+      "start": 9,
+      "end": 11,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:donated",
+      "familyId": "ed-ending",
+      "word": "donated",
+      "ipa": "/dəʊˈneɪtɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7,
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:eliminated",
+      "familyId": "ed-ending",
+      "word": "eliminated",
+      "ipa": "/ɪˈlɪmɪneɪtɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:erupted",
+      "familyId": "ed-ending",
+      "word": "erupted",
+      "ipa": "/ɪˈrʌptɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:guarded",
+      "familyId": "ed-ending",
+      "word": "guarded",
+      "ipa": "/gɑːdɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:harvested",
+      "familyId": "ed-ending",
+      "word": "harvested",
+      "ipa": "/ˈhɑːvɪstɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:interacted",
+      "familyId": "ed-ending",
+      "word": "interacted",
+      "ipa": "/ˌɪntərˈæktɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "ed-ending:invested",
+      "familyId": "ed-ending",
+      "word": "invested",
+      "ipa": "/ɪnˈvestɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:lasted",
+      "familyId": "ed-ending",
+      "word": "lasted",
+      "ipa": "/lɑːstɪd/",
+      "outcomeId": "id",
+      "start": 4,
+      "end": 6,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": "ed-ending:located",
+      "familyId": "ed-ending",
+      "word": "located",
+      "ipa": "/ləʊˈkeɪtɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:motivated",
+      "familyId": "ed-ending",
+      "word": "motivated",
+      "ipa": "/ˈməʊtɪveɪtɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:operated",
+      "familyId": "ed-ending",
+      "word": "operated",
+      "ipa": "/ˈɒpəreɪtɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:orbited",
+      "familyId": "ed-ending",
+      "word": "orbited",
+      "ipa": "/ˈɔːbɪtɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9
+      ]
+    },
+    {
+      "id": "ed-ending:originated",
+      "familyId": "ed-ending",
+      "word": "originated",
+      "ipa": "/əˈrɪdʒɪneɪtɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        7
+      ]
+    },
+    {
+      "id": "ed-ending:predicted",
+      "familyId": "ed-ending",
+      "word": "predicted",
+      "ipa": "/prɪˈdɪktɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        8
+      ]
+    },
+    {
+      "id": "ed-ending:promoted",
+      "familyId": "ed-ending",
+      "word": "promoted",
+      "ipa": "/prəˈməʊtɪd/",
+      "outcomeId": "id",
+      "start": 6,
+      "end": 8,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "ed-ending:respected",
+      "familyId": "ed-ending",
+      "word": "respected",
+      "ipa": "/rɪˈspektɪd/",
+      "outcomeId": "id",
+      "start": 7,
+      "end": 9,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:vaccinated",
+      "familyId": "ed-ending",
+      "word": "vaccinated",
+      "ipa": "/ˈvæksɪneɪtɪd/",
+      "outcomeId": "id",
+      "start": 8,
+      "end": 10,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        10
+      ]
+    },
+    {
+      "id": "ed-ending:visited",
+      "familyId": "ed-ending",
+      "word": "visited",
+      "ipa": "/ˈvɪzɪtɪd/",
+      "outcomeId": "id",
+      "start": 5,
+      "end": 7,
+      "accent": "en-GB",
+      "status": "approved",
+      "sourceGrades": [
+        5
+      ]
+    }
+  ]
+}
