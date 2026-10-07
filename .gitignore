@@ -9,4 +9,4 @@ node_modules
 /sound-families-pilot-149/
 /*.jpg
 /data/research/global-success-candidates.json
-/data/audio/pending/
+/.local-data/

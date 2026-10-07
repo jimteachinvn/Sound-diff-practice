@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, AudioLines, BookOpen, Check, ChevronRight, Clock3, GraduationCap, Headphones, HelpCircle, LogOut, RotateCcw, Shuffle, Sparkles, Target, UserRound, Volume2, X } from "lucide-react";
+import { ArrowRight, AudioLines, BookOpen, ChartNoAxesColumn, Check, ChevronRight, Clock3, GraduationCap, Headphones, HelpCircle, LogOut, RotateCcw, Shuffle, Sparkles, Target, UserRound, Volume2, X } from "lucide-react";
 import { exampleForOutcome, families, familyById, occurrences, wordsFor, type WordOccurrence } from "@/lib/content";
 import { contrastId, generateOdd, generateSort, highlighted, pickPracticeWords, type OddItem, type SortItem } from "@/lib/exercises";
 import { dueContrasts, emptyState, loadState, masteryScore, mergeLearningStates, recordAttempt, saveState, wordExposure, type Attempt, type LearningState } from "@/lib/mastery";
@@ -9,16 +9,22 @@ import { cloudConfigured, cloudIdentity, mergeCloudProgress, onCloudAuthChange, 
 import { playWordAudio, stopWordAudio, supportsWordAudio } from "@/lib/audio";
 import { familyEvidence } from "@/lib/progress";
 import { OnboardingDialog, StudyMotivation } from "./StudyMotivation";
+import { ProgressReport } from "./ProgressReport";
+import { LocalFamilyApp, type LocalProfile } from "./LocalFamilyApp";
+import { SpecialWelcome } from "./SpecialWelcome";
+import { FamilyAttemptSync } from "@/lib/family-sync";
 
-type View = "home" | "lesson" | "odd" | "sort" | "listen" | "review" | "exam";
+type View = "home" | "report" | "lesson" | "odd" | "sort" | "listen" | "review" | "exam";
 type ExamAnswer = { item: OddItem; selectedId: string };
 const letters = ["A", "B", "C", "D"];
 const teachingOrder = ["s-ending", "ed-ending", "ea", "i", "oo", "ow", "th", "c"];
 const curriculum = [...teachingOrder.map(familyById), ...families.filter((family) => !teachingOrder.includes(family.id))];
 const stages = ["SEE", "HEAR", "SORT", "CHOOSE", "RETEST"] as const;
 const stageLabels: Record<typeof stages[number], string> = { SEE: "NHÌN", HEAR: "NGHE", SORT: "XẾP TỪ", CHOOSE: "CHỌN", RETEST: "ÔN LẠI" };
-const viewLabels: Record<View, string> = { home: "LỘ TRÌNH HỌC", lesson: "BÀI HỌC ÂM", odd: "CHỌN TỪ KHÁC ÂM", sort: "PHÂN LOẠI", listen: "NGHE VÀ PHÂN LOẠI", review: "ÔN LẠI", exam: "THI BẤM GIỜ" };
+const viewLabels: Record<View, string> = { home: "LỘ TRÌNH HỌC", report: "BÁO CÁO HỌC TẬP", lesson: "BÀI HỌC ÂM", odd: "CHỌN TỪ KHÁC ÂM", sort: "PHÂN LOẠI", listen: "NGHE VÀ PHÂN LOẠI", review: "ÔN LẠI", exam: "THI BẤM GIỜ" };
 const kindLabels = { rule: "QUY TẮC", tendency: "XU HƯỚNG", lexical: "HỌC THEO TỪ" } as const;
+const cloudFamilyMode = process.env.NEXT_PUBLIC_FAMILY_BACKEND === "supabase";
+const familyEndpoint = cloudFamilyMode ? "/api/family" : "/api/local-family";
 
 function StagePath({ active, onSelect, examLocked = false, allowCurrent = false }: { active: typeof stages[number]; onSelect: (stage: typeof stages[number]) => void; examLocked?: boolean; allowCurrent?: boolean }) {
   return <nav className="stage-path" aria-label="Chọn cách luyện">{stages.map((stage, index) => <button type="button" className={`stage-step ${stage === active ? "current" : ""}`} aria-current={stage === active ? "step" : undefined} aria-label={`${String(index + 1).padStart(2, "0")}. ${stageLabels[stage]}${examLocked ? ", hãy thoát bài thi để đổi cách luyện" : ""}`} onClick={() => onSelect(stage)} disabled={examLocked || (stage === active && !allowCurrent)} key={stage}><span className="stage-number">{String(index + 1).padStart(2, "0")}</span><span>{stageLabels[stage]}</span>{index < stages.length - 1 && <ChevronRight size={15} aria-hidden="true"/>}</button>)}</nav>;
@@ -48,7 +54,7 @@ function ExamReview({ answers }: { answers: ExamAnswer[] }) {
 
 function attemptFor(item: OddItem, selectedId: string, mode: Attempt["mode"], startedAt: number): Attempt {
   return {
-    id: crypto.randomUUID(), at: new Date().toISOString(), familyId: item.familyId,
+    id: crypto.randomUUID(), at: new Date().toISOString(), familyId: item.familyId, pendingCloud: cloudFamilyMode,
     contrastId: item.contrastId, itemId: item.id, mode, selectedId,
     correctId: item.oddId, correct: selectedId === item.oddId,
     latencyMs: Math.max(0, Date.now() - startedAt),
@@ -57,9 +63,36 @@ function attemptFor(item: OddItem, selectedId: string, mode: Attempt["mode"], st
   };
 }
 
-export default function HomePage() {
-  const [view, setView] = useState<View>("home");
-  const [familyId, setFamilyId] = useState("s-ending");
+function createFamilySync(profile: LocalProfile): FamilyAttemptSync {
+  return new FamilyAttemptSync(profile.attempts, async (attempts) => {
+    const response = await fetch(familyEndpoint, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "sync", studentId: profile.id, attempts }) });
+    if (!response.ok) throw new Error("local sync failed");
+    const data = await response.json();
+    if (!Array.isArray(data.attempts)) throw new Error("local sync response invalid");
+    return { attempts: data.attempts, rejected: Array.isArray(data.rejected) ? data.rejected : [] };
+  }, async () => {
+    const response = await fetch(`${familyEndpoint}?studentId=${encodeURIComponent(profile.id)}`, { cache: "no-store" });
+    if (!response.ok) throw new Error("family refresh failed");
+    const data = await response.json();
+    if (!Array.isArray(data.student?.attempts)) throw new Error("family refresh response invalid");
+    return data.student.attempts;
+  });
+}
+function needsAttemptMerge(current: Attempt[], remote: Attempt[]): boolean {
+  const byId = new Map(current.map((attempt) => [attempt.id, attempt]));
+  return remote.some((attempt) => {
+    const old = byId.get(attempt.id);
+    return !old || old.at !== attempt.at || old.receivedAt !== attempt.receivedAt || old.correct !== attempt.correct || old.correctId !== attempt.correctId ||
+      old.itemId !== attempt.itemId || old.contrastId !== attempt.contrastId || old.familyId !== attempt.familyId;
+  });
+}
+
+function HomePage({ profile, onSwitch, onParent, welcomeActive = false }: { profile?: LocalProfile; onSwitch?: (saveFailed?: boolean) => void; onParent?: (saveFailed?: boolean) => void; welcomeActive?: boolean }) {
+  const familySync = useRef<FamilyAttemptSync | null>(null);
+  if (profile && !familySync.current) familySync.current = createFamilySync(profile);
+  const [view, setView] = useState<View>(profile?.startFamilyId ? "lesson" : "home");
+  const [familyId, setFamilyId] = useState(profile?.startFamilyId ?? "s-ending");
   const [learning, setLearning] = useState<LearningState>(emptyState);
   const learningRef = useRef<LearningState>(emptyState);
   learningRef.current = learning;
@@ -107,6 +140,14 @@ export default function HomePage() {
     })[0]?.id;
 
   useEffect(() => {
+    if (profile) {
+      const scope = `family:${profile.familyId}:${profile.id}`;
+      const fromServer = profile.attempts.reduce(recordAttempt, emptyState);
+      setLearning(mergeLearningStates(loadState(scope), fromServer));
+      setCloudStatus("connecting");
+      setReady(true);
+      return;
+    }
     let active = true;
     let initialized = false;
     const refresh = async () => {
@@ -139,9 +180,19 @@ export default function HomePage() {
     return () => { active = false; unsubscribe(); };
   // Auth events use the current account id ref to avoid reloading practice on token refresh.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [profile]);
   useEffect(() => {
     if (!ready) return;
+    if (profile) {
+      setStorageFailed(!saveState(learning, `family:${profile.familyId}:${profile.id}`));
+      void familySync.current!.synchronize(learning.attempts)
+        .then((merged) => {
+          setCloudStatus(familySync.current!.hasRejected ? "failed" : "synced");
+          if (needsAttemptMerge(learningRef.current.attempts, merged)) setLearning((current) => mergeLearningStates(current, merged.reduce(recordAttempt, emptyState)));
+        })
+        .catch(() => setCloudStatus("failed"));
+      return;
+    }
     setStorageFailed(!saveState(learning, cloudUser?.id));
     if (!cloudUser) return;
     void queueCloudSync(learning, cloudUser.id).then((status) => {
@@ -156,8 +207,23 @@ export default function HomePage() {
         } catch { /* The per-account cache remains available. */ }
       }
     });
-  }, [learning, ready, cloudUser]);
+  }, [learning, ready, cloudUser, profile]);
   useEffect(() => {
+    if (profile) {
+      const studentId = profile.id;
+      const refreshLocal = () => {
+        if (document.visibilityState === "hidden") return;
+        void fetch(`${familyEndpoint}?studentId=${encodeURIComponent(studentId)}`, { cache: "no-store" })
+          .then(async (response) => { if (!response.ok) throw new Error("local refresh failed"); return response.json(); })
+          .then((data) => {
+            if (!Array.isArray(data.student?.attempts)) return;
+            if (needsAttemptMerge(learningRef.current.attempts, data.student.attempts)) setLearning((current) => mergeLearningStates(current, data.student.attempts.reduce(recordAttempt, emptyState)));
+          }).catch(() => setCloudStatus("failed"));
+      };
+      window.addEventListener("focus", refreshLocal);
+      document.addEventListener("visibilitychange", refreshLocal);
+      return () => { window.removeEventListener("focus", refreshLocal); document.removeEventListener("visibilitychange", refreshLocal); };
+    }
     if (!ready || !cloudUser) return;
     const studentId = cloudUser.id;
     const refresh = () => {
@@ -173,7 +239,19 @@ export default function HomePage() {
     window.addEventListener("focus", refresh);
     document.addEventListener("visibilitychange", refresh);
     return () => { window.removeEventListener("focus", refresh); document.removeEventListener("visibilitychange", refresh); };
-  }, [ready, cloudUser]);
+  }, [ready, cloudUser, profile]);
+
+  const leaveLocalStudent = async (destination?: (saveFailed?: boolean) => void) => {
+    if (!profile || !destination) return;
+    setCloudStatus("connecting");
+    try {
+      await familySync.current!.synchronize(learningRef.current.attempts, true);
+      destination(familySync.current!.hasRejected);
+    } catch {
+      setCloudStatus("failed");
+      destination(true);
+    }
+  };
 
   const submitAccountEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -340,6 +418,8 @@ export default function HomePage() {
       <div className="side-label">GÓC HỌC TẬP</div>
       <nav className="side-nav" aria-label="Điều hướng chính">
         <button className={view === "home" ? "active" : ""} onClick={resetToHome} disabled={examActive}><BookOpen size={18}/> Lộ trình học</button>
+        <button className={view === "report" ? "active" : ""} onClick={() => setView("report")} disabled={examActive}><ChartNoAxesColumn size={18}/> Báo cáo học tập</button>
+        {profile && <><button onClick={() => { void leaveLocalStudent(onSwitch); }} disabled={examActive}><UserRound size={18}/> Đổi người học</button><button onClick={() => { void leaveLocalStudent(onParent); }} disabled={examActive}><GraduationCap size={18}/> Phụ huynh</button></>}
         <button className={view === "lesson" ? "active" : ""} onClick={() => setView("lesson")} disabled={examActive}><Sparkles size={18}/> Bài học âm</button>
         <button className={view === "odd" || view === "sort" || view === "listen" ? "active" : ""} onClick={() => beginOdd(familyId)} disabled={examActive}><Target size={18}/> Luyện tập</button>
         <button className={view === "review" ? "active" : ""} onClick={() => due.length && beginOdd(due[0].split(":")[0], "review", due[0])} disabled={examActive || !due.length}><RotateCcw size={18}/> Ôn âm đến hạn <span className="nav-count">{due.length}</span></button>
@@ -349,7 +429,7 @@ export default function HomePage() {
     </aside>
 
     <main className="main-content">
-      <header className="topbar"><div className="breadcrumb">HỌ ÂM TIẾNG ANH <ChevronRight size={14}/> {viewLabels[view]}</div><div className="topbar-right">{cloudConfigured() && <button className="help-button" onClick={() => setAccountOpen((open) => !open)} disabled={examActive} aria-label={cloudUser?.anonymous ? "Giữ tiến độ bằng email" : cloudUser ? "Xem tài khoản học tập" : "Lưu tiến độ bằng email"} aria-expanded={accountOpen} aria-controls="cloud-account"><UserRound size={17}/><span>{cloudUser?.anonymous ? "Giữ tiến độ" : cloudUser ? "Tài khoản" : "Lưu tiến độ"}</span></button>}<button className="help-button" onClick={() => setShowOnboarding(true)} disabled={examActive} aria-label="Xem hướng dẫn cách học"><HelpCircle size={17}/> <span>Cách học</span></button><div className="top-meta"><span className="top-meta-dot"/> {storageFailed ? "Không lưu được trên thiết bị" : `${learning.attempts.length} lượt trả lời đã lưu${cloudConfigured() ? !cloudUser ? " trên thiết bị này · chưa đăng nhập" : cloudStatus === "failed" ? " · không đồng bộ được" : cloudStatus === "connecting" ? " · đang kết nối" : " · đã đồng bộ" : " trên thiết bị này"}`}</div></div></header>
+      <header className="topbar"><div className="breadcrumb">HỌ ÂM TIẾNG ANH <ChevronRight size={14}/> {viewLabels[view]}</div><div className="topbar-right">{profile && <span className="profile-chip"><UserRound size={16}/>{profile.name}</span>}{!profile && cloudConfigured() && <button className="help-button" onClick={() => setAccountOpen((open) => !open)} disabled={examActive} aria-label={cloudUser?.anonymous ? "Giữ tiến độ bằng email" : cloudUser ? "Xem tài khoản học tập" : "Lưu tiến độ bằng email"} aria-expanded={accountOpen} aria-controls="cloud-account"><UserRound size={17}/><span>{cloudUser?.anonymous ? "Giữ tiến độ" : cloudUser ? "Tài khoản" : "Lưu tiến độ"}</span></button>}<button className="help-button" onClick={() => setShowOnboarding(true)} disabled={examActive} aria-label="Xem hướng dẫn cách học"><HelpCircle size={17}/> <span>Cách học</span></button><div className="top-meta"><span className="top-meta-dot"/> {storageFailed ? "Không lưu được trên thiết bị" : profile ? `${learning.attempts.length} câu · ${cloudStatus === "failed" ? "chưa lưu được" : cloudStatus === "connecting" ? "đang lưu" : cloudFamilyMode ? "đã đồng bộ" : "đã lưu thử nghiệm"}` : `${learning.attempts.length} lượt trả lời đã lưu${cloudConfigured() ? !cloudUser ? " trên thiết bị này · chưa đăng nhập" : cloudStatus === "failed" ? " · không đồng bộ được" : cloudStatus === "connecting" ? " · đang kết nối" : " · đã đồng bộ" : " trên thiết bị này"}`}</div></div></header>
       {cloudConfigured() && accountOpen && !examActive && <section className="cloud-account" id="cloud-account" aria-label="Tài khoản học tập"><h2>{cloudUser?.anonymous ? "Giữ tiến độ của em" : cloudUser ? "Tiến độ của em" : "Lưu tiến độ trên nhiều thiết bị"}</h2>{cloudUser && !cloudUser.anonymous ? <><p>Đã đăng nhập bằng {cloudUser.email ?? "thư điện tử"}. Tiến độ sẽ đồng bộ khi có mạng.</p><button className="secondary-button" type="button" onClick={leaveAccount} disabled={accountBusy}>Đăng xuất</button></> : <><p>Nhập địa chỉ thư điện tử để nhận liên kết đăng nhập. {cloudUser?.anonymous ? "Xác nhận địa chỉ để giữ tài khoản tạm thời hiện có." : "Em vẫn có thể luyện trên thiết bị này khi chưa đăng nhập."}</p><form onSubmit={submitAccountEmail}><label htmlFor="account-email">Địa chỉ thư điện tử</label><input id="account-email" type="email" value={accountEmail} onChange={(event) => setAccountEmail(event.target.value)} autoComplete="email" required/><button className="primary-button" type="submit" disabled={accountBusy}>{accountBusy ? "Đang gửi…" : "Gửi liên kết"}</button></form></>}{cloudUser && cloudStatus === "failed" && <p role="alert">Chưa đồng bộ được. Câu trả lời vẫn được giữ trên thiết bị này. <button type="button" className="cloud-retry" onClick={() => { setCloudStatus("connecting"); void queueCloudSync(learning, cloudUser.id).then(setCloudStatus); }}>Thử lại</button></p>}{accountMessage && <p role="status">{accountMessage}</p>}</section>}
 
       {view === "home" && <div className="page-content">
@@ -369,6 +449,8 @@ export default function HomePage() {
         })}</div>
         <section className="mode-strip"><div><span className="mode-icon"><GraduationCap size={20}/></span><div><strong>Sẵn sàng luyện tốc độ làm bài?</strong><p>8 câu hỏi mới, 75 giây, giải thích nhóm âm ngay sau khi trả lời.</p></div></div><button onClick={beginExam}>Bắt đầu thi bấm giờ <ArrowRight size={17}/></button></section>
       </div>}
+
+      {view === "report" && <ProgressReport learning={learning} onPractice={(id) => beginOdd(id)} sourceLabel={profile ? `Báo cáo của ${profile.name} từ các câu đã lưu ${cloudFamilyMode ? "trong tài khoản gia đình" : "trong bản thử nghiệm trên máy này"}.` : undefined}/>}
 
       {view === "lesson" && <div className="page-content narrow"><button className="back-link" onClick={resetToHome}>← Tất cả họ âm</button><StagePath active="SEE" onSelect={chooseStage}/><div className="lesson-head"><div className="eyebrow small">BÀI HỌC HỌ ÂM · {kindLabels[family.kind]}</div><h1><span className="lesson-grapheme">{family.grapheme}</span> {family.title}</h1><p>{family.vietnamese}</p></div><div className="family-switcher">{curriculum.map((item) => <button className={item.id === familyId ? "selected" : ""} key={item.id} onClick={() => setFamilyId(item.id)}>{item.grapheme}</button>)}</div><div className="rule-card"><span className="rule-icon"><Sparkles size={20}/></span><div><strong>Điểm cần nhớ</strong><p>{family.rule}</p></div></div><div className="sound-group-caption"><span className="micro-label">XEM CÁC NHÓM ÂM</span><span>Chạm vào biểu tượng loa để nghe từ</span></div><div className="lesson-grid">{family.outcomes.map((outcome) => <section className="outcome-card" key={outcome.id}><div className="outcome-head"><strong>{outcome.ipa}</strong><span>{outcome.label}</span></div><div className="word-list">{wordsFor(familyId).filter((item) => item.outcomeId === outcome.id).slice(0, 8).map((item) => <div key={item.id}><span><Word item={item}/></span><span className="word-ipa">{item.ipa}</span><AudioButton word={item.word} compact/></div>)}</div></section>)}</div><div className="lesson-actions"><button className="primary-button" onClick={() => beginSort(familyId)}>Phân loại các từ này <Shuffle size={17}/></button><button className="secondary-button" onClick={() => beginOdd(familyId)}>Thử tìm từ khác âm <ArrowRight size={17}/></button></div></div>}
 
@@ -412,6 +494,16 @@ export default function HomePage() {
         </div>
       </div>}
     </main>
-    {showOnboarding && <OnboardingDialog onClose={closeOnboarding}/>}
+    {showOnboarding && !welcomeActive && <OnboardingDialog onClose={closeOnboarding}/>}
   </div>;
+}
+
+export default function Page() {
+  if (process.env.NODE_ENV === "development" || cloudFamilyMode) return <LocalFamilyApp renderStudent={(profile, onSwitch, onParent) => <StudentEnvironment key={profile.id} profile={profile} onSwitch={onSwitch} onParent={onParent}/>}/>;
+  return <HomePage/>;
+}
+
+function StudentEnvironment({ profile, onSwitch, onParent }: { profile: LocalProfile; onSwitch: (failed?: boolean) => void; onParent: (failed?: boolean) => void }) {
+  const [welcomeActive, setWelcomeActive] = useState(true);
+  return <><SpecialWelcome studentId={profile.id} endpoint={cloudFamilyMode ? "/api/welcome" : "/api/special-welcome"} onInviteActiveChange={setWelcomeActive}/><HomePage profile={profile} onSwitch={onSwitch} onParent={onParent} welcomeActive={welcomeActive}/></>;
 }

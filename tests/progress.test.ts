@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { emptyState, recordAttempt, type Attempt } from "../lib/mastery.ts";
-import { contrastEvidence, earnedBadges, familyEvidence, weeklyGoal } from "../lib/progress.ts";
+import { contrastEvidence, earnedBadges, familyEvidence, studyDay, weeklyGoal } from "../lib/progress.ts";
 
 const base: Attempt = {
   id: "a", at: "2026-10-05T09:00:00.000Z", familyId: "ea", contrastId: "ea:e~i-long",
@@ -32,6 +32,23 @@ test("weekly goal requires three distinct answers on each of two study days", ()
   const state = [...monday, ...tuesday].reduce(recordAttempt, emptyState);
   assert.ok(earnedBadges(state, new Date("2026-10-07T09:00:00.000Z")).includes("weekly-goal"));
   assert.ok(earnedBadges(state, new Date("2026-10-15T09:00:00.000Z")).includes("weekly-goal"), "earned badges remain earned in later weeks");
+});
+
+test("study days use Vietnam time consistently across devices", () => {
+  assert.equal(studyDay(new Date("2026-10-05T16:59:00.000Z")), "2026-10-05");
+  assert.equal(studyDay(new Date("2026-10-05T17:01:00.000Z")), "2026-10-06");
+});
+
+test("offline occurrence dates count activity while cloud receipt time controls delayed mastery", () => {
+  const attempts = ["2026-10-05T09:00:00.000Z", "2026-10-06T10:00:00.000Z"].flatMap((at, day) =>
+    Array.from({ length: 3 }, (_, item) => ({ ...base, mode: "odd" as const, id: `${day}:${item}`, itemId: `q:${day}:${item}`, at, receivedAt: "2026-10-07T09:00:00.000Z" }))
+  );
+  assert.equal(weeklyGoal(attempts, new Date("2026-10-07T09:00:00.000Z")).completed, 2);
+  assert.equal(contrastEvidence(attempts, base.contrastId).independentlyConfirmed, false);
+  assert.equal(earnedBadges(attempts.reduce(recordAttempt, emptyState)).includes("durable-sound"), false);
+  const later = { ...attempts[0], id: "later", itemId: "q:new", at: "2026-10-08T10:00:00.000Z", receivedAt: "2026-10-08T10:00:00.000Z" };
+  assert.equal(contrastEvidence([...attempts, later], base.contrastId).independentlyConfirmed, true);
+  assert.equal(contrastEvidence([...attempts, { ...later, pendingCloud: true }], base.contrastId).independentlyConfirmed, false);
 });
 
 test("exploration badge needs three actual practice formats", () => {

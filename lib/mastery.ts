@@ -1,6 +1,8 @@
 export type Attempt = {
   id: string;
   at: string;
+  receivedAt?: string;
+  pendingCloud?: boolean;
   familyId: string;
   contrastId: string;
   itemId: string;
@@ -28,9 +30,14 @@ export type LearningState = { attempts: Attempt[]; mastery: Record<string, Maste
 export const emptyState: LearningState = { attempts: [], mastery: {} };
 const intervals = [1, 2, 4, 7, 14, 30];
 
+// Cloud receipt time proves spacing; occurrence time remains for activity charts.
+export function evidenceTime(attempt: Attempt): string {
+  return attempt.receivedAt && Number.isFinite(Date.parse(attempt.receivedAt)) ? attempt.receivedAt : attempt.at;
+}
+
 export function mergeLearningStates(left: LearningState, right: LearningState): LearningState {
   const unique = new Map([...left.attempts, ...right.attempts].map((attempt) => [attempt.id, attempt]));
-  return [...unique.values()].sort((a, b) => a.at.localeCompare(b.at) || a.id.localeCompare(b.id)).reduce(recordAttempt, emptyState);
+  return [...unique.values()].sort((a, b) => evidenceTime(a).localeCompare(evidenceTime(b)) || a.id.localeCompare(b.id)).reduce(recordAttempt, emptyState);
 }
 
 export function wordExposure(attempts: Attempt[]): Record<string, { count: number; lastTurn: number }> {
@@ -58,7 +65,7 @@ export function recordAttempt(state: LearningState, attempt: Attempt): LearningS
     recent: [], intervalDays: 0, dueAt: attempt.at, lastReviewedAt: attempt.at, lapses: 0
   };
   const weight = attempt.mode === "exam" ? 0.75 : attempt.mode === "sort" ? 0.7 : 1;
-  const date = new Date(attempt.at);
+  const date = new Date(evidenceTime(attempt));
   const independent = attempt.mode === "odd" || attempt.mode === "exam";
   const previousDue = new Date(previous.dueAt).getTime();
   const dueReview = previous.exposures === 0 || date.getTime() >= previousDue;
@@ -84,7 +91,7 @@ export function recordAttempt(state: LearningState, attempt: Attempt): LearningS
     recent: [...previous.recent, attempt.correct].slice(-8),
     intervalDays: nextInterval,
     dueAt: date.toISOString(),
-    lastReviewedAt: attempt.at,
+    lastReviewedAt: evidenceTime(attempt),
     lapses: previous.lapses + (attempt.correct ? 0 : 1)
   };
   return { attempts: [...state.attempts, attempt], mastery: { ...state.mastery, [attempt.contrastId]: mastery } };
@@ -121,7 +128,7 @@ export function loadState(scope?: string): LearningState {
       typeof item.latencyMs === "number" && Number.isFinite(item.latencyMs) &&
       ["odd", "sort", "listen", "exam"].includes(item.mode)
     );
-    return attempts.sort((a, b) => a.at.localeCompare(b.at) || a.id.localeCompare(b.id)).reduce(recordAttempt, emptyState);
+    return attempts.sort((a, b) => evidenceTime(a).localeCompare(evidenceTime(b)) || a.id.localeCompare(b.id)).reduce(recordAttempt, emptyState);
   } catch { /* A damaged local cache must not break practice. */ }
   return emptyState;
 }

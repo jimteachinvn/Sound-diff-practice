@@ -32,7 +32,9 @@ export function playWordAudio(word: string): Promise<boolean> {
     };
     audio.onended = () => finish(true);
     audio.onerror = () => finish(false);
-    audio.onpause = () => { if (!audio.ended) finish(false); };
+    // Selecting an answer or another example intentionally stops this clip.
+    // That cancellation should not display an audio failure on the old button.
+    audio.onpause = () => { if (!audio.ended) finish(true); };
     void audio.play().catch(() => finish(false));
   });
 }
