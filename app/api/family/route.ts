@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import type { Session } from "@supabase/supabase-js";
 import {
-  CloudFamilyError, addCloudStudent, cloudAdminFamilies, cloudFamilyEnabled,
+  CloudFamilyError, deleteCloudFamily, addCloudStudent, cloudAdminFamilies, cloudFamilyEnabled,
   cloudStudent, familySummary, resetCloudFamilyPin, signInCloudAdmin, signInCloudFamily,
   signOutCloudSession, signUpCloudFamily, syncCloudStudent,
   takeAdminAuthLimit, verifyAdminSession, verifyCloudSession
@@ -102,6 +102,11 @@ export async function POST(request: Request) {
       await takeAdminAuthLimit(trustedIp(request));
       const session = await signInCloudAdmin(body.email, body.password);
       return withRefresh({ families: await cloudAdminFamilies({ token: session.access_token, user: session.user }) }, session, true);
+    }
+    if (body.action === "adminDelete") {
+      const session = await currentSession(true);
+      if (!session) throw new CloudFamilyError("Cần đăng nhập quản trị.", 401);
+      return withRefresh({ families: await deleteCloudFamily(session, body.familyId, body.confirmPhone) }, session.refreshed, true);
     }
     if (body.action === "adminReset") {
       const session = await currentSession(true);

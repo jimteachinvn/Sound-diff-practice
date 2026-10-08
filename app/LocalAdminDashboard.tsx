@@ -14,15 +14,18 @@ export type AdminFamily = {
   students: { id: string; name: string; answers: number; studyDays: number; weeklyDays: number; confirmed: number; masteredFamilies: number; lastActiveAt: string | null }[];
 };
 
-export function LocalAdminDashboard({ families, resetPins, setResetPins, resetPin, busy, cloudMode = false }: {
+export function LocalAdminDashboard({ families, resetPins, setResetPins, resetPin, deleteFamily, busy, cloudMode = false }: {
   families: AdminFamily[];
   resetPins: Record<string, string>;
   setResetPins: React.Dispatch<React.SetStateAction<Record<string, string>>>;
   resetPin: (familyId: string) => void;
+  deleteFamily: (familyId: string, confirmPhone: string) => Promise<boolean>;
   busy: boolean;
   cloudMode?: boolean;
 }) {
   const [query, setQuery] = useState("");
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+  const [confirmPhone, setConfirmPhone] = useState("");
   const filtered = useMemo(() => families.filter((family) =>
     `${family.name} ${family.phone} ${family.students.map((student) => student.name).join(" ")}`.toLocaleLowerCase("vi").includes(query.trim().toLocaleLowerCase("vi"))
   ), [families, query]);
@@ -44,7 +47,13 @@ export function LocalAdminDashboard({ families, resetPins, setResetPins, resetPi
       <div className="admin-family-info"><strong>{family.name}</strong><span>{family.phone}</span><small>Tham gia {dateLabel(family.createdAt)} · Hoạt động gần nhất: {dateLabel(family.lastActiveAt)}</small>
         <div className="admin-students">{family.students.length ? family.students.map((student) => <div key={student.id}><strong>{student.name}</strong><span>{student.answers} câu · {student.weeklyDays}/2 ngày tuần này · {student.confirmed} cặp âm vững · {student.masteredFamilies} họ âm hoàn tất</span><WelcomeInviteControl studentId={student.id} name={student.name} cloudMode={cloudMode}/></div>) : <span>Chưa có học sinh</span>}</div>
       </div>
-      <div className="admin-reset"><label>PIN mới<input type="password" inputMode="numeric" pattern="[0-9]{4,8}" value={resetPins[family.id] ?? ""} onChange={(event) => setResetPins((old) => ({ ...old, [family.id]: event.target.value }))} placeholder="4–8 số"/></label><button className="secondary-button" onClick={() => resetPin(family.id)} disabled={busy || !/^\d{4,8}$/.test(resetPins[family.id] ?? "")}>Đặt lại PIN</button></div>
+      <div className="admin-reset"><label>PIN mới<input type="password" inputMode="numeric" pattern="[0-9]{4,8}" value={resetPins[family.id] ?? ""} onChange={(event) => setResetPins((old) => ({ ...old, [family.id]: event.target.value }))} placeholder="4–8 số"/></label><button className="secondary-button" onClick={() => resetPin(family.id)} disabled={busy || !/^\d{4,8}$/.test(resetPins[family.id] ?? "")}>Đặt lại PIN</button><button className="admin-delete-button" disabled={busy} onClick={() => { setDeleteTarget(deleteTarget === family.id ? null : family.id); setConfirmPhone(""); }} aria-expanded={deleteTarget === family.id}>Xóa gia đình</button></div>
+      {deleteTarget === family.id && <form className="admin-delete-confirm" onSubmit={async (event) => { event.preventDefault(); if (await deleteFamily(family.id, confirmPhone)) { setDeleteTarget(null); setConfirmPhone(""); } }}>
+        <strong>Xóa vĩnh viễn {family.name}?</strong><p>Xóa tài khoản, tất cả hồ sơ học sinh, câu trả lời và lời chào riêng. Không thể hoàn tác. {cloudMode && " Nhật ký hỗ trợ quản trị được giữ lại."}</p>
+        <p>{family.students.length} học sinh · {family.answers} câu trả lời đã lưu</p>
+        <label>Nhập số điện thoại {family.phone} để xác nhận<input type="tel" autoComplete="off" value={confirmPhone} onChange={(event) => setConfirmPhone(event.target.value)} disabled={busy}/></label>
+        <div><button type="button" className="secondary-button" disabled={busy} onClick={() => { setDeleteTarget(null); setConfirmPhone(""); }}>Hủy</button><button className="admin-delete-button" disabled={busy || confirmPhone.trim() !== family.phone}>Xóa vĩnh viễn</button></div>
+      </form>}
     </article>)}</div>
     {!filtered.length && <p>{families.length ? "Không tìm thấy gia đình phù hợp." : "Chưa có tài khoản gia đình."}</p>}
   </>;

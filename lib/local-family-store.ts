@@ -1,3 +1,4 @@
+import { validateFamilyDeletionConfirmation } from "./family-deletion.ts";
 import { randomBytes, randomUUID, scryptSync, timingSafeEqual, createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -169,6 +170,16 @@ export function resetFamilyPin(familyId: string, value: unknown): void {
   if (!family) throw new Error("Không tìm thấy tài khoản gia đình.");
   const salt = randomBytes(16).toString("hex");
   family.pinSalt = salt; family.pinHash = hashPin(pin, salt);
+  delete store.failures[family.phone];
+  for (const [key, session] of Object.entries(store.sessions)) if (session.familyId === familyId) delete store.sessions[key];
+  save(store);
+}
+
+export function deleteFamily(familyId: string, confirmation: unknown): void {
+  const store = load(), family = store.families.find((item) => item.id === familyId);
+  if (!family) throw new Error("Không tìm thấy tài khoản gia đình.");
+  validateFamilyDeletionConfirmation(family.phone, confirmation);
+  store.families = store.families.filter((item) => item.id !== familyId);
   delete store.failures[family.phone];
   for (const [key, session] of Object.entries(store.sessions)) if (session.familyId === familyId) delete store.sessions[key];
   save(store);

@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { addStudent, familyFromToken, getStudent, isAdmin, listFamiliesForAdmin, mergeStudentAttempts, prepareAdminCode, publicFamily, resetFamilyPin, revokeToken, signInAdmin, signInFamily, signUpFamily } from "@/lib/local-family-store";
-import { createSpecialWelcomeInvite } from "@/lib/special-welcome";
+import { addStudent, deleteFamily, familyFromToken, getStudent, isAdmin, listFamiliesForAdmin, mergeStudentAttempts, prepareAdminCode, publicFamily, resetFamilyPin, revokeToken, signInAdmin, signInFamily, signUpFamily } from "@/lib/local-family-store";
+import { createSpecialWelcomeInvite, removeFamilyWelcome } from "@/lib/special-welcome";
 
 export const runtime = "nodejs";
 const familyCookie = "sr_local_family";
@@ -59,6 +59,15 @@ export async function POST(request: Request) {
     if (body.action === "adminLogout") {
       revokeToken(jar.get(adminCookie)?.value);
       const response = NextResponse.json({ ok: true }); response.cookies.delete(adminCookie); return response;
+    }
+    if (body.action === "adminDelete") {
+      if (!isAdmin(jar.get(adminCookie)?.value)) return fail(new Error("Cần đăng nhập quản trị."), 401);
+      // Validate before removing the optional local greeting file.
+      const family = listFamiliesForAdmin().find((item) => item.id === body.familyId);
+      if (!family || typeof body.confirmPhone !== "string" || body.confirmPhone.trim() !== family.phone) return fail(new Error("Hãy nhập đúng số điện thoại của gia đình để xác nhận xóa."));
+      removeFamilyWelcome(family.id);
+      deleteFamily(family.id, body.confirmPhone);
+      return NextResponse.json({ families: listFamiliesForAdmin() });
     }
     if (body.action === "adminReset") {
       if (!isAdmin(jar.get(adminCookie)?.value)) return fail(new Error("Cần đăng nhập quản trị."), 401);

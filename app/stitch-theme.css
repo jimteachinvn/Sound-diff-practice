@@ -484,3 +484,10 @@ button.family-profile-card:hover { border-color: var(--teal); background: #203c4
 .family-form input, .family-add-form input, .admin-list input { font-size: 16px; }
 @media (max-width: 700px) { .admin-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); } .admin-list article { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .family-wrap { padding: 14px 15px 60px; } .family-header { margin-bottom: 24px; } .family-auth-card { margin-top: 22px; } .family-profile-grid { grid-template-columns: 1fr; } .admin-list article { grid-template-columns: 1fr; } .profile-chip { max-width: 120px; overflow: hidden; text-overflow: ellipsis; } }
+
+.admin-delete-button { min-height: 44px; padding: 10px 14px; border: 1px solid #e6a3ad; border-radius: 9px; background: #442734; color: #ffd5dd; font: inherit; cursor: pointer; }
+.admin-delete-button:disabled { opacity: .45; cursor: not-allowed; }
+.admin-delete-confirm { grid-column: 1 / -1; display: grid; gap: 10px; border-top: 1px solid #e6a3ad; padding-top: 16px; }
+.admin-delete-confirm p { margin: 0; overflow-wrap: anywhere; }
+.admin-delete-confirm label { display: grid; gap: 8px; overflow-wrap: anywhere; }
+.admin-delete-confirm > div { display: flex; flex-wrap: wrap; gap: 10px; }

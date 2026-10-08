@@ -1,4 +1,5 @@
 import "server-only";
+import { validateFamilyDeletionConfirmation } from "./family-deletion";
 
 import { createHmac } from "node:crypto";
 import { createClient, type Session, type SupabaseClient, type User } from "@supabase/supabase-js";
@@ -324,6 +325,31 @@ export async function resetCloudFamilyPin(adminSession: CloudSession, familyIdIn
   if (finished.error) {
     // Remain fail-closed: login_paused stays true if this final RPC did not run.
     throw new CloudFamilyError("Tài khoản đang tạm khóa sau khi đặt lại PIN. Cần kiểm tra nhật ký quản trị.", 503);
+  }
+  return cloudAdminFamilies(adminSession);
+}
+export async function deleteCloudFamily(adminSession: CloudSession, familyIdInput: unknown, confirmation: unknown) {
+  if (adminSession.user.id !== adminConfig().adminId) throw new CloudFamilyError("Cần đăng nhập quản trị.", 401);
+  if (typeof familyIdInput !== "string" || !/^[0-9a-f-]{36}$/i.test(familyIdInput) || familyIdInput === adminConfig().adminId) {
+    throw new CloudFamilyError("Không tìm thấy tài khoản gia đình.", 404);
+  }
+  const admin = secretClient();
+  const family = await admin.from("sr_families").select("id,phone_e164")
+    .eq("id", familyIdInput).maybeSingle();
+  if (family.error || !family.data) throw new CloudFamilyError("Không tìm thấy tài khoản gia đình.", 404);
+  try { validateFamilyDeletionConfirmation(family.data.phone_e164, confirmation); }
+  catch { throw new CloudFamilyError("Hãy nhập đúng số điện thoại của gia đình để xác nhận xóa.", 400); }
+  // Atomically claim the operation. Reset-start locks this same row and rejects
+  // paused families, so reset and deletion cannot overlap. RLS denies sessions
+  // immediately while Auth deletion removes the family and its child records.
+  const paused = await admin.from("sr_families").update({ login_paused: true })
+    .eq("id", familyIdInput).eq("login_paused", false).select("id").maybeSingle();
+  if (paused.error || !paused.data) throw new CloudFamilyError("Gia đình đang được xử lý. Cần kiểm tra trước khi xóa.", 409);
+  const removed = await admin.auth.admin.deleteUser(familyIdInput);
+  if (removed.error) {
+    // An ambiguous Auth failure may already have deleted the account. Do not
+    // restore access or reuse the operation; inspect the paused record first.
+    throw new CloudFamilyError("Chưa xác nhận được việc xóa. Tài khoản đã tạm khóa; vui lòng kiểm tra lại danh sách hoặc liên hệ hỗ trợ.", 503);
   }
   return cloudAdminFamilies(adminSession);
 }

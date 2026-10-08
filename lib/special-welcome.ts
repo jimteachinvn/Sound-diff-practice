@@ -1,5 +1,5 @@
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { existsSync, unlinkSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { getStudent } from "./local-family-store.ts";
 
@@ -34,4 +34,10 @@ export function greetingForInvite(familyId: string, studentId: string, token: un
   if (invite.familyId !== familyId || invite.studentId !== studentId || !getStudent(familyId, studentId)) return null;
   const supplied = hash(token), saved = Buffer.from(invite.tokenHash, "hex");
   return supplied.length === saved.length && timingSafeEqual(supplied, saved) ? invite.greeting : null;
+}
+
+export function removeFamilyWelcome(familyId: string): void {
+  if (!existsSync(invitePath())) return;
+  const invite = JSON.parse(readFileSync(invitePath(), "utf8")) as Invite;
+  if (invite.familyId === familyId) unlinkSync(invitePath());
 }
