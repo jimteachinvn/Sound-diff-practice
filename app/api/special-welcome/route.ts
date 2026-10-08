@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { familyFromToken } from "@/lib/local-family-store";
+import { familyFromToken, getStudent } from "@/lib/local-family-store";
 import { greetingForInvite } from "@/lib/special-welcome";
 
 export const runtime = "nodejs";
@@ -24,5 +24,5 @@ export async function POST(request: Request) {
   const studentId = typeof body.studentId === "string" ? body.studentId : "";
   const greeting = greetingForInvite(family.id, studentId, body.token);
   if (!greeting) return NextResponse.json({ error: "Mã chào mừng chưa phù hợp với hồ sơ học sinh này." }, { status: 403 });
-  return NextResponse.json({ greeting }, { headers: { "Cache-Control": "no-store" } });
+  return NextResponse.json({ greeting, studentName: getStudent(family.id, studentId)?.name }, { headers: { "Cache-Control": "no-store, private" } });
 }

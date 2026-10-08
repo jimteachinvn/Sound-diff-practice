@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     if (body.action === "create") {
       const session = await verifyAdminSession(jar.get("sr_cloud_admin_at")?.value, jar.get("sr_cloud_admin_rt")?.value);
       if (!session) throw new CloudFamilyError("Cần đăng nhập quản trị.", 401);
-      const link = await createCloudWelcomeInvite(session, body.studentId, body.greeting);
+      const link = await createCloudWelcomeInvite(session, body.studentId, body.greeting, body.design);
       const response = json({ link });
       if (session.refreshed) refreshCookies(response, session.refreshed, true);
       return response;
@@ -52,8 +52,8 @@ export async function POST(request: Request) {
     if (body.action === "redeem") {
       const session = await verifyCloudSession(jar.get("sr_cloud_family_at")?.value, jar.get("sr_cloud_family_rt")?.value);
       if (!session) throw new CloudFamilyError("Hãy đăng nhập tài khoản gia đình trước.", 401);
-      const greeting = await redeemCloudWelcomeInvite(session, body.studentId, body.token);
-      const response = json({ greeting });
+      const welcome = await redeemCloudWelcomeInvite(session, body.studentId, body.token);
+      const response = json(welcome);
       if (session.refreshed) refreshCookies(response, session.refreshed, false);
       return response;
     }

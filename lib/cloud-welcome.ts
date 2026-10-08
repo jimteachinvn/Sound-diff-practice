@@ -3,6 +3,7 @@ import "server-only";
 import { createHash, randomBytes } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import { CloudFamilyError, cloudFamilyEnabled, type CloudSession } from "./cloud-family-server";
+import { welcomeGreetingForDesign } from "./welcome-design";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const tokenPattern = /^[A-Za-z0-9_-]{43}$/;
@@ -19,17 +20,15 @@ function studentId(input: unknown): string {
   if (typeof input !== "string" || !uuid.test(input)) throw new CloudFamilyError("Hồ sơ học sinh chưa hợp lệ.");
   return input;
 }
-function greetingText(input: unknown): string {
-  if (typeof input !== "string") throw new CloudFamilyError("Vui lòng nhập lời chào.");
-  const value = input.trim().replace(/\s+/g, " ");
-  if (value.length < 2 || value.length > 120) throw new CloudFamilyError("Lời chào cần từ 2 đến 120 ký tự.");
-  return value;
+function greetingText(input: unknown, design: unknown): string {
+  try { return welcomeGreetingForDesign(input, design); }
+  catch (cause) { throw new CloudFamilyError(cause instanceof Error ? cause.message : "Lời chào chưa hợp lệ."); }
 }
 
 /** Replaces any previous invite for this student. Only the hash reaches the database. */
-export async function createCloudWelcomeInvite(admin: CloudSession, studentInput: unknown, greetingInput: unknown): Promise<string> {
+export async function createCloudWelcomeInvite(admin: CloudSession, studentInput: unknown, greetingInput: unknown, design?: unknown): Promise<string> {
   if (admin.user.id !== process.env.FAMILY_ADMIN_USER_ID) throw new CloudFamilyError("Cần đăng nhập quản trị.", 401);
-  const id = studentId(studentInput), greeting = greetingText(greetingInput), client = secretClient();
+  const id = studentId(studentInput), greeting = greetingText(greetingInput, design), client = secretClient();
   const student = await client.from("sr_students").select("id,family_id")
     .eq("id", id).is("archived_at", null).maybeSingle();
   if (student.error) throw new CloudFamilyError("Chưa kiểm tra được hồ sơ học sinh.", 503);
@@ -45,13 +44,13 @@ export async function createCloudWelcomeInvite(admin: CloudSession, studentInput
 }
 
 /** A valid invite reveals only its greeting, after normal family login. */
-export async function redeemCloudWelcomeInvite(family: CloudSession, studentInput: unknown, tokenInput: unknown): Promise<string> {
+export async function redeemCloudWelcomeInvite(family: CloudSession, studentInput: unknown, tokenInput: unknown): Promise<{ greeting: string; studentName: string }> {
   const id = studentId(studentInput);
   if (typeof tokenInput !== "string" || !tokenPattern.test(tokenInput)) {
     throw new CloudFamilyError("Mã chào mừng chưa phù hợp với hồ sơ này.", 403);
   }
   const client = secretClient();
-  const owned = await client.from("sr_students").select("id").eq("id", id)
+  const owned = await client.from("sr_students").select("id,name").eq("id", id)
     .eq("family_id", family.user.id).is("archived_at", null).maybeSingle();
   if (owned.error) throw new CloudFamilyError("Chưa kiểm tra được hồ sơ học sinh.", 503);
   if (!owned.data) throw new CloudFamilyError("Mã chào mừng chưa phù hợp với hồ sơ này.", 403);
@@ -60,5 +59,5 @@ export async function redeemCloudWelcomeInvite(family: CloudSession, studentInpu
     .eq("token_hash", digest(tokenInput)).gt("expires_at", new Date().toISOString()).maybeSingle();
   if (invite.error) throw new CloudFamilyError("Chưa kiểm tra được lời chào.", 503);
   if (!invite.data) throw new CloudFamilyError("Mã chào mừng chưa phù hợp với hồ sơ này.", 403);
-  return invite.data.greeting;
+  return { greeting: invite.data.greeting, studentName: owned.data.name };
 }

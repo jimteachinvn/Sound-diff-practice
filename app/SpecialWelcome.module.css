@@ -6,3 +6,57 @@
 .message { margin: 18px 0 28px; font-size: 1.1rem; line-height: 1.5; }
 .button { min-height: 48px; padding: 0 26px; border: 0; border-radius: 13px; color: #052730; background: #56dacb; font: inherit; font-weight: 800; cursor: pointer; }
 .button:hover, .button:focus-visible { background: #8df2e4; }
+.button:focus-visible, .close:focus-visible { outline: 3px solid #ffb2b7; outline-offset: 4px; }
+.rescue { position: relative; width: min(calc(100% - 32px), 1064px); padding: 50px; background: #171f33; text-align: left; overflow: auto; }
+.close { position: absolute; right: 12px; top: 10px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 12px; background: #263249; color: #dae2fd; font: inherit; font-size: 28px; cursor: pointer; }
+.card { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 42px; }
+.card > div { min-width: 0; }
+.rescue .eyebrow { margin: 0 0 18px; font-size: 12px; }
+.rescue .title { font-size: clamp(34px, 4.4vw, 57px); font-weight: 800; line-height: 1.12; letter-spacing: -1.5px; margin: 0 0 27px; overflow-wrap: anywhere; }
+.title em { font-style: normal; color: #4fdbc8; }
+.rescue .message { font-size: 20px; line-height: 1.55; margin: 0 0 18px; }
+.message strong { color: #ffb2b7; }
+.aside { color: #bbcac6; font-size: 16px; margin: 0 0 24px; }
+.teacher { border-left: 3px solid #4fdbc8; padding-left: 16px; margin: 27px 0; color: #bbcac6; }
+.teacher p { margin: 0; }
+.teacher span { display: block; font-size: 12px; color: #4fdbc8; font-weight: 700; margin-top: 7px; }
+.rescue .button { width: 100%; max-width: 365px; padding: 14px 20px; }
+.hint { display: block; margin-top: 14px; color: #bbcac6; font-size: 12px; text-align: center; max-width: 365px; }
+.art { display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 0; }
+.bubble { position: relative; background: #263249; border: 1px solid #4c6075; border-radius: 18px; padding: 14px 18px; max-width: 250px; font-size: 14px; transform: rotate(-4deg); text-align: center; margin-bottom: 12px; }
+.bubble::after { content: ""; position: absolute; bottom: -7px; left: 65%; width: 13px; height: 13px; background: #263249; border-right: 1px solid #4c6075; border-bottom: 1px solid #4c6075; transform: rotate(45deg); }
+.letters { position: relative; font-size: 150px; font-weight: 850; line-height: 1.2; letter-spacing: -12px; color: #ffb2b7; transform: rotate(6deg); padding: 2px 20px 12px 2px; }
+.eyes { position: absolute; left: 48%; top: 44%; display: flex; gap: 10px; transform: rotate(-6deg); }
+.eyes span { background: #0b1326; width: 11px; height: 17px; border-radius: 50%; position: relative; }
+.eyes span::after { content: ""; position: absolute; top: 2px; left: 2px; width: 3px; height: 4px; border-radius: 50%; background: white; }
+.sounds { display: flex; gap: 9px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+.sound { display: flex; flex-direction: column; align-items: center; padding: 12px 13px; background: #111a2e; border: 1px solid #3a4e60; border-radius: 13px; min-width: 78px; font-size: 14px; font-weight: 650; }
+.sound mark { background: transparent; color: #ffb2b7; }
+.ipa { color: #4fdbc8; font: 600 24px/1.2 Georgia, serif; margin-bottom: 8px; }
+.artNote { font-size: 12px; color: #bbcac6; text-align: center; margin: 17px 0 0; max-width: 250px; }
+.footerNote { display: flex; align-items: center; gap: 12px; margin: 24px 0 0; color: #bbcac6; font-size: 13px; }
+.footerNote span { color: #4fdbc8; font-size: 20px; }
+.success { background: #173f42; border: 1px solid #286869; border-radius: 14px; padding: 18px; margin-top: 18px; max-width: 365px; color: #4fdbc8; }
+.motion .letters { animation: wiggle .7s ease-in-out; }
+@keyframes wiggle { 0%,100% { transform: rotate(6deg); } 35% { transform: rotate(-8deg); } 70% { transform: rotate(10deg); } }
+@media (prefers-reduced-motion: reduce) { .motion .letters { animation: none; } }
+@media (max-width: 700px) {
+  .rescue { padding: 60px 25px 28px; border-radius: 24px; }
+  .card { grid-template-columns: 1fr; gap: 28px; }
+  .rescue .title { font-size: 37px; margin-bottom: 22px; }
+  .rescue .message { font-size: 18px; }
+  .aside { font-size: 15px; }
+  .letters { font-size: 116px; }
+  .bubble { font-size: 12px; max-width: 235px; }
+  .teacher { margin: 23px 0; }
+  .sound { min-width: 80px; }
+  .footerNote { font-size: 12px; }
+  .rescue .button, .hint, .success { max-width: none; }
+}
+@media (max-width: 350px) {
+  .rescue { padding: 60px 19px 24px; }
+  .rescue .title { font-size: 32px; }
+  .sounds { gap: 6px; }
+  .sound { min-width: 72px; padding: 10px; }
+  .rescue .message { font-size: 17px; }
+}

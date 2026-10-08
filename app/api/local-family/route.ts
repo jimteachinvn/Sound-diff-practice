@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { addStudent, deleteFamily, familyFromToken, getStudent, isAdmin, listFamiliesForAdmin, mergeStudentAttempts, prepareAdminCode, publicFamily, resetFamilyPin, revokeToken, signInAdmin, signInFamily, signUpFamily } from "@/lib/local-family-store";
 import { createSpecialWelcomeInvite, removeFamilyWelcome } from "@/lib/special-welcome";
+import { welcomeGreetingForDesign } from "@/lib/welcome-design";
 
 export const runtime = "nodejs";
 const familyCookie = "sr_local_family";
@@ -77,8 +78,8 @@ export async function POST(request: Request) {
     if (body.action === "createWelcome") {
       if (!isAdmin(jar.get(adminCookie)?.value)) return fail(new Error("Cần đăng nhập quản trị."), 401);
       const family = listFamiliesForAdmin().find((item) => item.students.some((student) => student.id === body.studentId));
-      if (!family || typeof body.studentId !== "string" || typeof body.greeting !== "string") return fail(new Error("Hồ sơ hoặc lời chào chưa hợp lệ."));
-      return NextResponse.json({ link: createSpecialWelcomeInvite(family.id, body.studentId, body.greeting, new URL(request.url).origin) });
+      if (!family || typeof body.studentId !== "string") return fail(new Error("Hồ sơ hoặc lời chào chưa hợp lệ."));
+      return NextResponse.json({ link: createSpecialWelcomeInvite(family.id, body.studentId, welcomeGreetingForDesign(body.greeting, body.design), new URL(request.url).origin) });
     }
     if (body.action === "logout") {
       revokeToken(jar.get(familyCookie)?.value);
