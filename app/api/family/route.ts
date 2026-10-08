@@ -1,3 +1,4 @@
+import { canonicalAppOrigin, isAllowedRequestOrigin } from "@/lib/request-origin";
 import { isIP } from "node:net";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
@@ -34,16 +35,7 @@ function clearSession(response: NextResponse, admin = false) {
   response.cookies.delete(admin ? adminRefresh : familyRefresh);
 }
 function checkedOrigin(request: Request) {
-  const supplied = request.headers.get("origin");
-  let source: URL;
-  try { source = new URL(supplied ?? ""); }
-  catch { throw new CloudFamilyError("Nguồn yêu cầu chưa hợp lệ.", 403); }
-  const destination = new URL(request.url);
-  const loopback = process.env.NODE_ENV === "development" && source.protocol === "http:" &&
-    destination.protocol === "http:" && source.port === destination.port &&
-    ["localhost", "127.0.0.1"].includes(source.hostname) &&
-    ["localhost", "127.0.0.1"].includes(destination.hostname);
-  if (source.origin !== destination.origin && !loopback) {
+  if (!isAllowedRequestOrigin(request, canonicalAppOrigin, process.env.NODE_ENV === "development")) {
     throw new CloudFamilyError("Nguồn yêu cầu chưa hợp lệ.", 403);
   }
 }

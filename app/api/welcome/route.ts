@@ -1,3 +1,4 @@
+import { canonicalAppOrigin, isAllowedRequestOrigin } from "@/lib/request-origin";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import type { Session } from "@supabase/supabase-js";
@@ -21,13 +22,9 @@ function refreshCookies(response: NextResponse, session: Session, admin: boolean
     { httpOnly: true, secure, sameSite: "lax", path: "/", maxAge: 30 * 24 * 60 * 60 });
 }
 function requireSameOrigin(request: Request) {
-  const supplied = request.headers.get("origin");
-  let source: URL;
-  try { source = new URL(supplied ?? ""); } catch { throw new CloudFamilyError("Nguồn yêu cầu chưa hợp lệ.", 403); }
-  const target = new URL(request.url);
-  const loopback = process.env.NODE_ENV === "development" && source.protocol === "http:" && target.protocol === "http:" &&
-    source.port === target.port && ["localhost", "127.0.0.1"].includes(source.hostname) && ["localhost", "127.0.0.1"].includes(target.hostname);
-  if (source.origin !== target.origin && !loopback) throw new CloudFamilyError("Nguồn yêu cầu chưa hợp lệ.", 403);
+  if (!isAllowedRequestOrigin(request, canonicalAppOrigin, process.env.NODE_ENV === "development")) {
+    throw new CloudFamilyError("Nguồn yêu cầu chưa hợp lệ.", 403);
+  }
 }
 async function bodyOf(request: Request): Promise<Record<string, unknown>> {
   const raw = await request.text();
